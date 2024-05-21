@@ -9,18 +9,18 @@ reservas_page = trabalho['RESERVAS']
 # Função para adicionar dados com input
 def adicionar_reserva():
     dados = [
-        input("Digite o nome do cliente: "),
         input("Digite o livro reservado: "),
+        input("Digite o tipo do livro reservado: "),
+        input("Digite a ID do usuário: "),
         input("Digite a data da reserva: "),
-        input("Digite a data de retirada: "),
-        input("Digite o status da reserva (Ativa/Cancelada): ")
+        input("Digite a data da devolução: ")
     ]
 
-    linha = 3
+    linha = 6
     while reservas_page.cell(row=linha, column=1).value is not None:
         linha += 1
 
-    for col, valor in enumerate(dados, start=1):
+    for col, valor in enumerate(dados, start=2):
         reservas_page.cell(row=linha, column=col, value=valor)
 
 # Loop para adicionar várias reservas

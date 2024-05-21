@@ -9,19 +9,19 @@ usuarios_page = trabalho['USUARIOS']
 # Função para adicionar dados com input
 def adicionar_usuario():
     dados = [
+        input("Digite a ID do usuário: "),
         input("Digite o nome do usuário: "),
-        input("Digite o e-mail do usuário: "),
-        input("Digite o cargo do usuário: "),
-        input("Digite o departamento do usuário: "),
-        input("Digite o status do usuário (Ativo/Inativo): ")
+        input("Digite o CPF do usuário: "),
+        input("Digite o tipo do usuário (Funcionário/Usuário): "),
+        input("Digite a senha do usuário: ")
     ]
 
-    linha = 3
+    linha = 6
     while usuarios_page.cell(row=linha, column=1).value is not None:
         linha += 1
 
-    for col, valor in enumerate(dados, start=1):
-        usuarios_page.cell(row=linha, column=col, value=valor)
+    for col, valor in enumerate(dados, start=2):
+        usuarios_page.cell(row=linha, columRn=col, value=valor)
 
 # Loop para adicionar vários usuários
 while True:

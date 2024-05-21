@@ -16,11 +16,11 @@ def adicionar_livro():
         input("Digite o status do livro (Disponível/Indisponível): ")
     ]
 
-    linha = 3
+    linha = 6
     while livro_page.cell(row=linha, column=1).value is not None:
         linha += 1
 
-    for col, valor in enumerate(dados, start=1):
+    for col, valor in enumerate(dados, start=2):
         livro_page.cell(row=linha, column=col, value=valor)
 
 # Loop para adicionar vários livros
